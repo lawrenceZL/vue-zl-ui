@@ -3,17 +3,17 @@
     <div class="tab">
       <div class="blank_tab">
       </div>
-      <div :class="{tab_item: true,tab_item_select:select==='0'}" v-on:click="tab0Click">
+      <div :class="{tab_item: true,tab_item_select:currentSelect==='0'}" v-on:click="tab0Click">
         {{text1}}
       </div>
       <div class="blank_tab">
       </div>
-      <div :class="{tab_item:true,tab_item_select:select==='1'}" v-on:click="tab1Click">
+      <div :class="{tab_item:true,tab_item_select:currentSelect==='1'}" v-on:click="tab1Click">
         {{text2}}
       </div>
       <div class="blank_tab" v-if="tabnum>=3">
       </div>
-      <div :class="{tab_item: true,tab_item_select:select==='2'}" v-if="tabnum>=3" v-on:click="tab2Click">
+      <div :class="{tab_item: true,tab_item_select:currentSelect==='2'}" v-if="tabnum>=3" v-on:click="tab2Click">
         {{text3}}
       </div>
       <div class="blank_tab">
@@ -49,27 +49,32 @@ export default {
       default: 2
     }
   },
+  data () {
+    return {
+      currentSelect: this.select
+    }
+  },
   methods: {
     tab0Click (e) {
       // console.log(e.toElement.innerText)
       let json = {}
       json['index'] = '0'
       json['item'] = e.toElement.innerText
-      this.select = '0'
+      this.currentSelect = '0'
       this.sendMsg(json)
     },
     tab1Click (e) {
       let json = {}
       json['index'] = '1'
       json['item'] = e.toElement.innerText
-      this.select = '1'
+      this.currentSelect = '1'
       this.sendMsg(json)
     },
     tab2Click (e) {
       let json = {}
       json['index'] = '2'
       json['item'] = e.toElement.innerText
-      this.select = '2'
+      this.currentSelect = '2'
       this.sendMsg(json)
     },
     sendMsg (json) {
