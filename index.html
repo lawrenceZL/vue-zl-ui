@@ -4,9 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>vue-zl-ui</title>
+    <style>
+      img {
+        content: normal !important;
+      }
+    </style>
   </head>
-  <body>
-    <div id="app"></div>
+  <body style="margin: 0">
+    <div id="app">
+      <!--vue-ssr-outlet-->
+    </div>
+    <!-- <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script> -->
+    <script src="./static/vw-buggyfill.js"></script>
+    <script>
+      window.onload = function () {
+        window.viewportUnitsBuggyfill.init({
+          hacks: window.viewportUnitsBuggyfillHacks
+        })
+      }</script>
+    <script type="text/javascript" src="./static/gunzip.min.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>

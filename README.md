@@ -1,30 +1,1 @@
-# vue-zl-ui
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+﻿﻿﻿﻿﻿﻿# vue-zl-ui> 基于Vue的ui组件## Build Setup``` bash# 安装依赖npm install# 项目运行：localhost:8080npm run dev# 编译项目npm run build```## TabBar组件参数/事件 | 说明 | 类型 | 默认值 - | --- | --- | ---select | 选择默认选中的tab，可选0，1，2| String |'0' | tabnum | 选择tab的数量，目前支持2和3| String | '2' |text1 | 第一个tab的文字| String | 'tab1' |text2 | 第二个tab的文字| String | 'tab2' |text3 | 第三个tab的文字，只有在tabnum为3时才生效| String | 'tab3' |tabClick |点击tab触发事件，返回一个包含index和item的对象| Function | 无 |``` bashui组件待逐步完善@CopyRight lawenceZL```
