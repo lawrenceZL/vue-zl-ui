@@ -136,12 +136,6 @@ export default {
           let cfg = {
             text: text.toFixed(2) + '%'
           }
-          // if (text > 0) {
-          //   cfg.text = '+' + cfg.text
-          // } else if (text === 0) {
-          //   cfg.fill = '#000'
-          //   cfg.fontWeight = 'bold'
-          // }
           return cfg
         }
       })

@@ -93,32 +93,8 @@ export default {
           origin.toolTipShow = true
           that.origin = origin
           that.returnTooltip(origin)
-          // console.log(that.origin)
         }
-        // onHide (ev) {
-        //   // console.log(ev.tooltip.items[0].origin)
-        //   let origin = ev.tooltip.items[0].origin
-        //   origin.toolTipShow = false
-        //   that.origin = origin
-        //   // console.log(origin)
-        //   that.returnTooltip(origin)
-        // }
       })
-      // chart.interaction('pan', {
-      //   // mode: {String}, // 图表平移的方向，默认为 'x'
-      //   // speed: {number}, // 用于控制分类类型或者 TimeCat 类型数据的平移速度
-      //   // step: {number}, // 用于控制分类类型或者 TimeCat 类型数据每次平移的数据条数
-      //   // panThreshold: {Number}, // hammer.js 设置，用于设置触发 pan 事件的最小移动距离
-      //   // pressThreshold: {Number}, // hammer.js 设置，用于设置触发 press 事件的设置
-      //   // pressTime: {Number}, // hammer.js 设置，用于设置触发 press 事件的最小时间差
-      //   // limitRange: {Object}, // 限制范围
-      //   onStart: function (val) {
-      //     that.$emit('touchPan', val.additionalEvent)
-      //     console.log(val)
-      //   } // 事件触发后的回调
-      //   // onProcess: {Function}, // 事件进行中的回调
-      //   // onEnd: {Function} // 事件结束后的回调
-      // })
       chart.axis('range', {
         grid: {
           stroke: '#ddd',
@@ -163,8 +139,6 @@ export default {
   },
   mounted () {
     this.goBarChart(this.kline_data)
-    // console.log('mounted1')
-    // console.log(this.kline_data)
   },
   data () {
     return {
