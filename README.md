@@ -54,6 +54,9 @@ textInput | 输入框内容改变时触发，支持原生输入框的change事�
 inputBlur | 输入框失去焦点时触发，支持原生输入框的blur事件，同时返回输入框value| Function | 无 |
 inputFocus | 输入框获取焦点时时触发，支持原生输入框的focus事件，同时返回输入框value| Function | 无 |
 onSearch | 点击搜索图标时触发时触发，同时返回输入框value| Function | 无 |
+list_show | 是否显示搜索下拉框| Boolean | false |
+list | 下拉框内容list，字段包含key、left、center、right| Array | 无 |
+itemClick | 点击list触发事件，返回点击的数据| Function | 无 |
 
 &nbsp;
 
@@ -69,7 +72,7 @@ tabClick |点击tab触发事件，返回一个包含index和item的对象| Funct
 
 ``` bash
 ui组件待逐步完善
-@CopyRight lawenceZL
+@CopyRight lawrenceZL
 ```
 
 
