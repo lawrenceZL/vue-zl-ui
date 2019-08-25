@@ -9,11 +9,11 @@
     <search-bar placeholder="这是一个placeholder" v-on:textInput="textInput" v-on:inputBlur="inputBlur"
                 v-on:inputFocus="inputFocus" v-on:onSearch="onSearch" defaultValue="这是一个默认值"></search-bar>
     <div style="height: 20px;"></div>
-    <left-right-select style="width: 200px" :list="list" :index="index" loop="true" v-on:selectClick="selectClick"></left-right-select>
+    <left-right-select :list="list" :index="index" loop="true" v-on:selectClick="selectClick"></left-right-select>
     <div style="height: 20px;"></div>
     <left-right-select :list="list"  v-on:selectClick="selectClick"></left-right-select>
     <div style="height: 20px;"></div>
-    <div class="open_modal"><button class="button" v-on:click="openModal">打开modal</button></div>
+    <calendar :can_select_list="can_select_list"></calendar>
     <modal :titleShow='titleShow' :footerShow="footerShow" :isShow="isShow" cancelText="取消按钮"
     confirmText="确认按钮" title="更换后的标题" v-on:onCancel="onCancel" v-on:onOk="onOk" v-on:close="onCancel" v-on:modalBlur="onCancel">
       <div>这是content这是content</div>
@@ -22,6 +22,8 @@
       <div>这是content</div>
       <div>这是content</div>
     </modal>
+    <div style="height: 20px;"></div>
+    <div class="open_modal"><button class="button" v-on:click="openModal">打开modal</button></div>
   </div>
 </template>
 
@@ -30,9 +32,10 @@ import TabBar from '../components/TabBar'
 import SearchBar from '../components/SearchBar'
 import LeftRightSelect from '../components/LeftRightSelect'
 import Modal from '../components/Modal'
+import Calendar from '../components/Calendar'
 export default {
   name: 'Example',
-  components: {Modal, LeftRightSelect, SearchBar, TabBar},
+  components: {Calendar, Modal, LeftRightSelect, SearchBar, TabBar},
   methods: {
     tabClick (e) {
       console.log(e)
@@ -76,7 +79,8 @@ export default {
       content: 'hhh',
       titleShow: true,
       footerShow: true,
-      isShow: false
+      isShow: false,
+      can_select_list: ['2019-08-23', '2019-08-30', '2019-08-25', '2019-08-26', '2019-08-27', '2019-08-28', '2019-08-29',]
     }
   }
 }
