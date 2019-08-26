@@ -43,7 +43,7 @@ export default {
       type: String,
       default: ''
     },
-    can_select_list: {
+    list: {
       type: Array,
       default: function () {
         return []
@@ -105,7 +105,7 @@ export default {
     },
     // 判断某日期是不是在可选范围内
     check_select (date) {
-      let canSelectList = this.can_select_list
+      let canSelectList = this.list
       for (let i = 0; i < canSelectList.length; i++) {
         if (date === canSelectList[i]) {
           return true

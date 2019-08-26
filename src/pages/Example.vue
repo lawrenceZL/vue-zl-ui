@@ -13,7 +13,7 @@
     <div style="height: 20px;"></div>
     <left-right-select :list="list"  v-on:selectClick="selectClick"></left-right-select>
     <div style="height: 20px;"></div>
-    <calendar :can_select_list="can_select_list"></calendar>
+    <calendar :list="can_select_list"></calendar>
     <modal :titleShow='titleShow' :footerShow="footerShow" :isShow="isShow" cancelText="取消按钮"
     confirmText="确认按钮" title="更换后的标题" v-on:onCancel="onCancel" v-on:onOk="onOk" v-on:close="onCancel" v-on:modalBlur="onCancel">
       <div>这是content这是content</div>
