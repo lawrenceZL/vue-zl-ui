@@ -15,7 +15,7 @@
     <div class="date">
       <div class="column" v-for="(item, index) in columnArr" :key="index">
         <div class="day" v-for="(item2,index2) in item" :key="index2" v-on:click="day_click(item2)">
-          <div :class="{day_text:true, day_select:day_select === item2.value&&day_select!=='',day_disabled:!item2.canSelect}">{{item2.index}}</div>
+          <div :class="{day_text:true, day_select:value === item2.value&&value!=='',day_disabled:!item2.canSelect}">{{item2.index}}</div>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ export default {
     }
   },
   props: {
-    day_select: {
+    value: {
       type: String,
       default: ''
     },
@@ -48,10 +48,18 @@ export default {
       default: function () {
         return []
       }
+    },
+    defaultValue: {
+      type: String,
+      default: new Date()
+    },
+    isSelectDefault: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
-    let selectDay = this.day_select === '' ? new Date() : this.day_select
+    let selectDay = this.value === '' ? this.defaultValue : this.value
     this.getDate(selectDay)
     this.setDate()
   },
@@ -68,7 +76,9 @@ export default {
       this.firstDay = fist.getDay()
       let last = new Date(year, months, 0)
       this.lastDay = last.getDate()
-      this.day_select = this.formatTimeToDate(time)
+      if (this.isSelectDefault) {
+        this.value = this.formatTimeToDate(time)
+      }
     },
     // 构建日历数组
     setDate () {
@@ -155,7 +165,7 @@ export default {
     },
     day_click (e) {
       if (e.index !== '' && e.canSelect) {
-        this.day_select = e.value
+        this.value = e.value
         this.$emit('daySelect', e)
       }
       // console.log(this.data.day_select)
