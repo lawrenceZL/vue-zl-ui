@@ -99,6 +99,15 @@ export default {
         json['canSelect'] = this.check_select(value)
         dateArr.push(json)
       }
+      let last = 7 - this.lastDay % 7
+      for (let i = 0; i < last; i++) {
+        json = {}
+        json['index'] = ''
+        json['value'] = ''
+        json['canSelect'] = false
+        json['canSelectRange'] = false
+        dateArr.push(json)
+      }
       this.dateArr = dateArr
       let columnArr = []
       let array = []
